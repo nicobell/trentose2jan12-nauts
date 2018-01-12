@@ -29,21 +29,11 @@ nauts.get('/:nautid', function (req, res) {
 })
 
 assignments.put('/:nautid', function (req, res) {
-    const assignmentID = req.params.assignmentID
-    const i = deliveredAssignments.findIndex(item => {return item.assignmentID === assignmentID})
-    deliveredAssignments[i] = req.body
-    deliveredAssignments[i].assignmentID = assignmentID
-    deliveredAssignments[i].dateUpdated = new Date()
-    res.json(deliveredAssignments[i])
-})
-
-assignments.delete('/:assignmentID', function (req, res) {
-    const assignmentID = req.params.assignmentID
-    if (!assignmentID) res.sendStatus(404)
-    const i = deliveredAssignments.findIndex(item => {return item.assignmentID === assignmentID})
-    const deleted = deliveredAssignments[i]
-    deliveredAssignments.splice(i,1)
-    res.sendStatus(204)
+    const nautid = req.params.nautid
+    const i = spacenauts.findIndex(item => {return item.nautid === nautid})
+    spacenauts[i] = req.body
+    spacenauts[i].nautid = nautid
+    res.json(spacenauts[i])
 })
 
 module.exports = nauts
