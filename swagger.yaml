@@ -131,7 +131,7 @@ definitions:
       - isInSpace
     properties:
       nautid:
-        type: string
+        type: integer
       firstName:
         type: string
       lastName:
