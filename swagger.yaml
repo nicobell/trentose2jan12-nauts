@@ -12,7 +12,7 @@ info:
     name: MIT
     url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
 host: trentose2jan12-nauts.herokuapp.com
-basePath: /
+basePath: /nauts
 schemes:
   - http
 consumes:
@@ -20,7 +20,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /nauts:
+  /:
     get:
       description: |
         Find informations about an astronaut
@@ -62,14 +62,14 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/Error'
-  /astronauts/{id}:
+  /nauts/{lastName}:
     get:
       description: Returns astronaut with given id
       operationId: findnautsby lastName
       parameters:
-        - name: id
+        - name: lastName
           in: path
-          description: Infos about astronaut with given last name
+          description: id of astronaut with given last name
           required: true
           type: string
           x-example: 'some-example'
@@ -82,11 +82,12 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/Error'
+
     put:
       description: Updates an existing astronaut, or create a new one with lastName.
       operationId: update astronauts
       parameters:
-        - name: id
+        - name: lastName
           in: path
           description: ID of assignment to edit or create
           required: true
