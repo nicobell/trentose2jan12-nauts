@@ -1,13 +1,13 @@
 
 const express = require('express'),
     bodyParser = require('body-parser');
-const assignments = express.Router()
+const nauts = express.Router()
 
 var uuid = require('uuid-v4');
 
 const spacenauts = []
 
-nauts.get('/', function (req, res) {
+nauts.get('/', function(req, res) {
     res.json(spacenauts)
 })
 
@@ -28,7 +28,7 @@ nauts.get('/:nautid', function (req, res) {
     }
 })
 
-assignments.put('/:nautid', function (req, res) {
+nauts.put('/:nautid', function (req, res) {
     const nautid = req.params.nautid
     const i = spacenauts.findIndex(item => {return item.nautid === nautid})
     spacenauts[i] = req.body
