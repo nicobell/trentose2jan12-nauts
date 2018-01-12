@@ -62,46 +62,20 @@ paths:
           description: unexpected error
           schema:
             $ref: '#/definitions/Error'
-  /nauts/{lastName}:
-    get:
-      description: Returns astronaut with given id
-      operationId: findnautsby lastName
-      parameters:
-        - name: lastName
-          in: path
-          description: id of astronaut with given last name
-          required: true
-          type: string
-          x-example: 'some-example'
-      responses:
-        200:
-          description: OK - astronaut
-          schema:
-            $ref: '#/definitions/Astronauts'
-        default:
-          description: unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
+  /{nautid}:
     put:
       description: Updates an existing astronaut, or create a new one with lastName.
       operationId: update astronauts
       parameters:
-        - name: lastName
+        - name: nautid
           in: path
-          description: ID of assignment to edit or create
+          description: ID of astronaut to edit or create
           required: true
           type: string
           x-example: 'some-example'
-        - name: assignment
-          in: body
-          description: assignment
-          required: true
-          schema:
-            $ref: '#/definitions/Astronauts'
       responses:
         202:
-          description: assignment update response
+          description: Updated astronaut
           schema:
             $ref: '#/definitions/Astronauts'
         default:
