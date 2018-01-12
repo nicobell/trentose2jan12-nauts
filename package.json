@@ -1,0 +1,23 @@
+{
+  "name": "nauts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicobell/trentose2jan12-nauts.git"
+  },
+  "author": "nicobell <nico.bellucco@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicobell/trentose2jan12-nauts/issues"
+  },
+  "homepage": "https://github.com/nicobell/trentose2jan12-nauts#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "uuid-v4": "^0.1.0"
+  }
+}
